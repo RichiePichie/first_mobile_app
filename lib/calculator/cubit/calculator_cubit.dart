@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:first_mobile_app/calculator/cubit/calculator_state.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 class CalculatorCubit extends Cubit<CalculatorState> {
