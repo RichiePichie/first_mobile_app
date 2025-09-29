@@ -1,4 +1,4 @@
-import 'package:first_mobile_app/calculator/view/calculator_page.dart';
+import 'package:first_mobile_app/calculator/view/calculator_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

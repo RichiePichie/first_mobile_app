@@ -31,7 +31,10 @@ class CalculatorView extends StatelessWidget {
               builder: (context, state) {
                 return Container(
                   alignment: Alignment.bottomRight,
-                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 32,
+                    vertical: 24,
+                  ),
                   child: Text(
                     state.display,
                     style: const TextStyle(
@@ -96,9 +99,18 @@ class ButtonGrid extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CalculatorButton(label: '7', onPressed: () => cubit.onButtonPressed('7')),
-              CalculatorButton(label: '8', onPressed: () => cubit.onButtonPressed('8')),
-              CalculatorButton(label: '9', onPressed: () => cubit.onButtonPressed('9')),
+              CalculatorButton(
+                label: '7',
+                onPressed: () => cubit.onButtonPressed('7'),
+              ),
+              CalculatorButton(
+                label: '8',
+                onPressed: () => cubit.onButtonPressed('8'),
+              ),
+              CalculatorButton(
+                label: '9',
+                onPressed: () => cubit.onButtonPressed('9'),
+              ),
               CalculatorButton(
                 label: '×',
                 onPressed: () => cubit.onButtonPressed('×'),
@@ -110,9 +122,18 @@ class ButtonGrid extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CalculatorButton(label: '4', onPressed: () => cubit.onButtonPressed('4')),
-              CalculatorButton(label: '5', onPressed: () => cubit.onButtonPressed('5')),
-              CalculatorButton(label: '6', onPressed: () => cubit.onButtonPressed('6')),
+              CalculatorButton(
+                label: '4',
+                onPressed: () => cubit.onButtonPressed('4'),
+              ),
+              CalculatorButton(
+                label: '5',
+                onPressed: () => cubit.onButtonPressed('5'),
+              ),
+              CalculatorButton(
+                label: '6',
+                onPressed: () => cubit.onButtonPressed('6'),
+              ),
               CalculatorButton(
                 label: '−',
                 onPressed: () => cubit.onButtonPressed('−'),
@@ -124,9 +145,18 @@ class ButtonGrid extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CalculatorButton(label: '1', onPressed: () => cubit.onButtonPressed('1')),
-              CalculatorButton(label: '2', onPressed: () => cubit.onButtonPressed('2')),
-              CalculatorButton(label: '3', onPressed: () => cubit.onButtonPressed('3')),
+              CalculatorButton(
+                label: '1',
+                onPressed: () => cubit.onButtonPressed('1'),
+              ),
+              CalculatorButton(
+                label: '2',
+                onPressed: () => cubit.onButtonPressed('2'),
+              ),
+              CalculatorButton(
+                label: '3',
+                onPressed: () => cubit.onButtonPressed('3'),
+              ),
               CalculatorButton(
                 label: '+',
                 onPressed: () => cubit.onButtonPressed('+'),
@@ -143,7 +173,10 @@ class ButtonGrid extends StatelessWidget {
                 onPressed: () => cubit.onButtonPressed('0'),
                 width: 176,
               ),
-              CalculatorButton(label: '.', onPressed: () => cubit.onButtonPressed('.')),
+              CalculatorButton(
+                label: '.',
+                onPressed: () => cubit.onButtonPressed('.'),
+              ),
               CalculatorButton(
                 label: '=',
                 onPressed: () => cubit.onButtonPressed('='),

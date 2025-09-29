@@ -30,10 +30,7 @@ class CalculatorButton extends StatelessWidget {
         shape: const CircleBorder(),
         child: Text(
           label,
-          style: TextStyle(
-            fontSize: 32,
-            color: foregroundColor,
-          ),
+          style: TextStyle(fontSize: 32, color: foregroundColor),
         ),
       ),
     );
