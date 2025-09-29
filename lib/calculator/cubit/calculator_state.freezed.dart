@@ -12,16 +12,13 @@ part of 'calculator_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CalculatorState {
   String get display => throw _privateConstructorUsedError;
 
-  /// Create a copy of CalculatorState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $CalculatorStateCopyWith<CalculatorState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -29,9 +26,8 @@ mixin _$CalculatorState {
 /// @nodoc
 abstract class $CalculatorStateCopyWith<$Res> {
   factory $CalculatorStateCopyWith(
-    CalculatorState value,
-    $Res Function(CalculatorState) then,
-  ) = _$CalculatorStateCopyWithImpl<$Res, CalculatorState>;
+          CalculatorState value, $Res Function(CalculatorState) then) =
+      _$CalculatorStateCopyWithImpl<$Res, CalculatorState>;
   @useResult
   $Res call({String display});
 }
@@ -46,30 +42,26 @@ class _$CalculatorStateCopyWithImpl<$Res, $Val extends CalculatorState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of CalculatorState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? display = null}) {
-    return _then(
-      _value.copyWith(
-            display: null == display
-                ? _value.display
-                : display // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? display = null,
+  }) {
+    return _then(_value.copyWith(
+      display: null == display
+          ? _value.display
+          : display // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$CalculatorStateImplCopyWith<$Res>
     implements $CalculatorStateCopyWith<$Res> {
-  factory _$$CalculatorStateImplCopyWith(
-    _$CalculatorStateImpl value,
-    $Res Function(_$CalculatorStateImpl) then,
-  ) = __$$CalculatorStateImplCopyWithImpl<$Res>;
+  factory _$$CalculatorStateImplCopyWith(_$CalculatorStateImpl value,
+          $Res Function(_$CalculatorStateImpl) then) =
+      __$$CalculatorStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String display});
@@ -80,23 +72,20 @@ class __$$CalculatorStateImplCopyWithImpl<$Res>
     extends _$CalculatorStateCopyWithImpl<$Res, _$CalculatorStateImpl>
     implements _$$CalculatorStateImplCopyWith<$Res> {
   __$$CalculatorStateImplCopyWithImpl(
-    _$CalculatorStateImpl _value,
-    $Res Function(_$CalculatorStateImpl) _then,
-  ) : super(_value, _then);
+      _$CalculatorStateImpl _value, $Res Function(_$CalculatorStateImpl) _then)
+      : super(_value, _then);
 
-  /// Create a copy of CalculatorState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? display = null}) {
-    return _then(
-      _$CalculatorStateImpl(
-        display: null == display
-            ? _value.display
-            : display // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? display = null,
+  }) {
+    return _then(_$CalculatorStateImpl(
+      display: null == display
+          ? _value.display
+          : display // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -125,16 +114,12 @@ class _$CalculatorStateImpl implements _CalculatorState {
   @override
   int get hashCode => Object.hash(runtimeType, display);
 
-  /// Create a copy of CalculatorState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$CalculatorStateImplCopyWith<_$CalculatorStateImpl> get copyWith =>
       __$$CalculatorStateImplCopyWithImpl<_$CalculatorStateImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 }
 
 abstract class _CalculatorState implements CalculatorState {
@@ -143,11 +128,8 @@ abstract class _CalculatorState implements CalculatorState {
 
   @override
   String get display;
-
-  /// Create a copy of CalculatorState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$CalculatorStateImplCopyWith<_$CalculatorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

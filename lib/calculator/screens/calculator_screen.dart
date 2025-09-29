@@ -3,9 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:first_mobile_app/calculator/cubit/calculator_cubit.dart';
 import 'package:first_mobile_app/calculator/cubit/calculator_state.dart';
 import 'package:first_mobile_app/calculator/widgets/calculator_button.dart';
+import 'package:first_mobile_app/calculator/widgets/app_drawer.dart';
 
-class CalculatorPage extends StatelessWidget {
-  const CalculatorPage({super.key});
+class CalculatorScreen extends StatelessWidget {
+  const CalculatorScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,11 @@ class CalculatorView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Calculator'),
+        backgroundColor: Colors.black,
+      ),
+      drawer: const AppDrawer(),
       backgroundColor: Colors.black,
       body: SafeArea(
         child: Column(

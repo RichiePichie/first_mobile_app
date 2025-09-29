@@ -1,5 +1,7 @@
 import 'package:first_mobile_app/calculator/cubit/calculator_state.dart';
+import 'package:first_mobile_app/calculator/models/calculation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 
 class CalculatorCubit extends Cubit<CalculatorState> {
@@ -110,7 +112,17 @@ class CalculatorCubit extends Cubit<CalculatorState> {
         break;
     }
 
-    emit(state.copyWith(display: _formatResult(result)));
+    final formattedResult = _formatResult(result);
+    final expression = '$_firstOperand $_operator $_secondOperand';
+
+    final calculation = Calculation(
+      expression: expression,
+      result: formattedResult,
+      timestamp: DateTime.now(),
+    );
+    Hive.box<Calculation>('calculations').add(calculation);
+
+    emit(state.copyWith(display: formattedResult));
     _firstOperand = result.toString();
     _operator = '';
     _secondOperand = '';
