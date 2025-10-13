@@ -27,22 +27,32 @@ class HistoryScreen extends StatelessWidget {
         valueListenable: Hive.box<Calculation>('calculations').listenable(),
         builder: (context, Box<Calculation> box, _) {
           if (box.values.isEmpty) {
-            return const Center(
-              child: Text('No history yet.'),
-            );
+            return const Center(child: Text('No history yet.'));
           }
           return ListView.builder(
-            reverse: true,
             itemCount: box.values.length,
             itemBuilder: (context, index) {
-              final calculation = box.getAt(box.length - 1 - index) as Calculation;
-              return ListTile(
-                title: Text(
-                  '${calculation.expression} = ${calculation.result}',
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+              final actualIndex = box.length - 1 - index;
+              final calculation = box.getAt(actualIndex) as Calculation;
+              return Dismissible(
+                key: Key('${calculation.timestamp.millisecondsSinceEpoch}'),
+                background: Container(
+                  color: Colors.red,
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.only(left: 20),
+                  child: const Icon(Icons.delete, color: Colors.white),
                 ),
-                subtitle: Text(
-                  DateFormat.yMMMd().add_jm().format(calculation.timestamp),
+                onDismissed: (direction) {
+                  box.deleteAt(actualIndex);
+                },
+                child: ListTile(
+                  title: Text(
+                    '${calculation.expression} = ${calculation.result}',
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text(
+                    DateFormat.yMMMd().add_jm().format(calculation.timestamp),
+                  ),
                 ),
               );
             },
