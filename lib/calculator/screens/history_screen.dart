@@ -42,6 +42,12 @@ class HistoryScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 20),
                   child: const Icon(Icons.delete, color: Colors.white),
                 ),
+                secondaryBackground: Container(
+                  color: Colors.red,
+                  alignment: Alignment.centerRight,
+                  padding: const EdgeInsets.only(right: 20),
+                  child: const Icon(Icons.delete, color: Colors.white),
+                ),
                 onDismissed: (direction) {
                   box.deleteAt(actualIndex);
                 },
